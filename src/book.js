@@ -1,8 +1,10 @@
+// FUNCTION 1//
+
 function createTitle(bookIdea) {
   return ('The ' + bookIdea);
 };
 
-createTitle('The Storm\'s Awakening');
+//FUNCTION 2//
 
 function buildMainCharacter(name, age, pronouns) {
   var character = {
@@ -13,13 +15,15 @@ function buildMainCharacter(name, age, pronouns) {
   return character;
 };
 
+//FUNCTION 3//
+
 function saveReview(review, reviewList) {
   if (reviewList.indexOf(review) === -1) {
     return reviewList.push(review);
   }
 };
 
-//OR//
+//FUNCTION 3//
 
 function saveReview(review, reviewList) {
   if (reviewList.includes(review)) {
@@ -29,43 +33,29 @@ function saveReview(review, reviewList) {
   }
 };
 
-//OR//
-
-// function saveReview(review, reviewList) {
-//   var uniqueReviewList = reviewList.filter((review, index)) => reviewList.indexOf(review) === index);
-// uniqueReviewList.push(review);
-// return uniqueReviewList;
-// };
+//FUNCTION 4//
 
 function calculatePageCount(bookTitle) {
-
+  return bookTitle.length * 20;
 };
 
-//create a function to calculate pageCount
-//takes in a parameter of bookTitle
-//should add 20 pages per letter
-//create a for loop to add 20 to each letter
-//look at charAt() for strings
-//expected output is 340
-//should be dynamic and work for other bookTitles
+//FUNCTION 5//
 
-function writeBook(title, mainCharacter, genre, pageCount) {
+function writeBook(title, mainCharacter, genre) {
   var book = {
     title: title,
     mainCharacter: mainCharacter,
-    pageCount: 340,
+    pageCount: calculatePageCount(title),
     genre: genre,
   }
-  console.log(book);
   return book;
 };
 
+//FUNCTION 6//
+
 function editBook(book) {
-  console.log(book.pageCount * 0.75);
-  return book.pageCount * 0.75;
+  book.pageCount = book.pageCount * 0.75;
 };
-
-
 
 module.exports = {
   createTitle,

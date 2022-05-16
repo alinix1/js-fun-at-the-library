@@ -93,14 +93,14 @@ describe("book.js", function() {
       assert.isFunction(calculatePageCount);
     });
 
-    it.skip("should add 20 pages per letter in the title", function() {
+    it("should add 20 pages per letter in the title", function() {
       var bookTitle = createTitle("Teenage Ghoul");
       var bookPageCount = calculatePageCount(bookTitle);
 
       assert.equal(bookPageCount, 340);
     });
 
-    it.skip("should add 20 pages per letter for a different title", function() {
+    it("should add 20 pages per letter for a different title", function() {
       var bookTitle = createTitle("Dragon in the Summer");
       var bookPageCount = calculatePageCount(bookTitle);
 
@@ -124,7 +124,7 @@ describe("book.js", function() {
       assert.equal(book.genre, "fantasy");
     });
 
-    it.skip("should return a different book object", function() {
+    it("should return a different book object", function() {
       var dragonTitle = createTitle("Dragon in the Summer");
       var dragonCharacter = buildMainCharacter("Dana", 25, "they/them");
       var dragonBook = writeBook(dragonTitle, dragonCharacter, "fantasy");
@@ -141,7 +141,7 @@ describe("book.js", function() {
       assert.isFunction(editBook);
     });
 
-    it.skip("should decrease the book's page count to be three quarters of what it originally was", function() {
+    it("should decrease the book's page count to be three quarters of what it originally was", function() {
       var ghoulTitle = createTitle("Teenage Ghoul");
       var ghoulCharacter = buildMainCharacter("Vassya", 16, "she/her");
       var ghoulBook = writeBook(ghoulTitle, ghoulCharacter, "mystery");
@@ -153,8 +153,7 @@ describe("book.js", function() {
       assert.equal(ghoulBook.pageCount, 255);
     });
 
-
-    it.skip("should decrease a different book's page count to be three quarters of what it originally was", function() {
+    it("should decrease a different book's page count to be three quarters of what it originally was", function() {
       var dragonTitle = createTitle("Dragon in the Summer");
       var dragonCharacter = buildMainCharacter("Dana", 25, "they/them");
       var dragonBook = writeBook(dragonTitle, dragonCharacter, "fantasy");
