@@ -1,3 +1,5 @@
+//FUNCTION 1//
+
 function createLibrary(name) {
   var library = {
     name: name,
@@ -7,9 +9,10 @@ function createLibrary(name) {
       nonFiction: [],
     }
   }
-  console.log(library);
   return library;
 };
+
+//FUNCTION 2//
 
 function shelfHasBook(shelf, book) {
   for (var i = 0; i < shelf.length; i++) {
@@ -22,14 +25,16 @@ function shelfHasBook(shelf, book) {
 };
 
 function addBook(library, book) {
-  if (book.genre == "fantasy" && !shelfHasBook(library.shelves.fantasy, book)) {
+  if (book.genre === "fantasy" && !shelfHasBook(library.shelves.fantasy, book)) {
     library.shelves.fantasy.unshift(book);
-  } else if (book.genre == "fiction" && !shelfHasBook(library.shelves.fiction, book)) {
+  } else if (book.genre === "fiction" && !shelfHasBook(library.shelves.fiction, book)) {
     library.shelves.fiction.unshift(book);
-  } else if (book.genre == "nonFiction" && !shelfHasBook(library.shelves.nonFiction, book)) {
+  } else if (book.genre === "nonFiction" && !shelfHasBook(library.shelves.nonFiction, book)) {
     library.shelves.nonFiction.unshift(book);
   }
 };
+
+//FUNCTION 3//
 
 function checkoutBook(library, bookTitle, bookGenre) {
   var shelf = [];
@@ -58,19 +63,6 @@ function indexOfBook(shelf, book) {
     }
   }
 };
-
-//OR//
-
-// function checkoutBook(library, bookTitle, bookGenre) {
-//   for (var i = 0; i < library.shelves[bookGenre].length; i++) {
-//     if (library.shelves[bookGenre][i].title === bookTitle) {
-//       library.shelves[bookGenre].splice(i, 1);
-//       return `You have now checked out ${bookTitle} from the ${library.name}`;
-//     } else {
-//       return `Sorry, there are currently no copies of ${bookTitle} available at the ${library.name}`;
-//     }
-//   }
-// };
 
 module.exports = {
   createLibrary,

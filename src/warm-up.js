@@ -16,14 +16,11 @@
 var title = 'Harry Potter and the Philosopher\'s Stone';
 var pages = 223;
 
-
-
 // Reassign (not initialize) your "pages" variable from above. An editor came around and
 // condensed the book, use a built in math operator to make the page count a quarter
 // of what it currently is
 
 pages = 223 * 0.25;
-
 
 // Initialize a new variable "movie", but leave it undefined
 
@@ -36,7 +33,6 @@ var sequel = 'Harry Potter and the Chamber of Secrets';
 
 // Initialize a new variable "isFavorite", and assign it to a boolean value indicating
 // if the book you chose is your favorite book or not
-
 
 var isFavorite = false;
 
@@ -51,10 +47,7 @@ if (pages < 25) {
   var isShortStory = false;
 };
 
-
-
 //------------------------- Conditionals -------------------------//
-
 
 // Express the following in code: If the variable "pages" is less than 1000 log
 // the statement 'I could read that in a day!', otherwise, log the statement
@@ -65,8 +58,6 @@ if (pages < 1000) {
 } else {
   console.log('Ok, maybe I could read that in a day and a half');
 };
-
-
 
 // Express the following in code: If the variable "isFavorite" is true,
 // log the statement 'My favorite book is [title]!'. Otherwise, log the
@@ -79,15 +70,12 @@ if (isFavorite === true) {
   console.log(`I recently read the ${title} book`);
 }
 
-
 //------------------------- Arrays -------------------------//
-
 
 // Create a new variable "books" and assign it to an Array of 5 different
 // book titles, represented by their names as Strings.
 
 var books = ['The Great Gatsby', 'Don Quixote', 'Moby Dick', 'Dante\'s Inferno', 'Ulysses'];
-
 
 // Write the code to access the 3rd element of the Array, using bracket
 // notation.
@@ -113,7 +101,6 @@ var dictionary {
   name: 'Webster\'s',
   hasThesaurus: false;
 };
-
 
 // Write the code to add the key of pageCount, with the value of 720. Use dot
 // notation to do this. DO NOT modify your code from above.

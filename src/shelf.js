@@ -1,33 +1,33 @@
+//FUNCTION 1//
+
 function shelfBook(book, shelf) {
   if (shelf.length < 3) {
     shelf.unshift(book);
   }
 };
 
+//FUNCTION 2//
+
 function unshelfBook(book, shelf) {
   var bookIndex = shelf.findIndex((name) => name.title === book);
   shelf.splice(bookIndex, 1);
 };
 
-//can this be implemented using a for loop instead?
+//FUNCTION 3//
 
 function listTitles(titles) {
-  var itemlist = titles[0].title
+  var bookTitleList = titles[0].title
   for (var i = 1; i < titles.length; i++) {
-    itemlist += ', ' + titles[i].title
+    bookTitleList += ', ' + titles[i].title;
   }
-  return itemlist;
+  return bookTitleList;
 };
 
-function searchShelf(shelf, book) {
-  return shelf.some(element => element.title === book);
+//FUNCTION 4//
+
+function searchShelf(shelf, bookTitle) {
+  return shelf.some(book => book.title === bookTitle);
 };
-
-//use .includes() for the above implementation?
-//instead of .some() method
-
-
-
 
 module.exports = {
   shelfBook,
