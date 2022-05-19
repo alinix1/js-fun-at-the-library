@@ -14,9 +14,9 @@ function createLibrary(name) {
 
 //FUNCTION 2//
 
-function shelfHasBook(shelf, book) {
-  for (var i = 0; i < shelf.length; i++) {
-    if (shelf[i] === book) {
+function checkBookStatus(bookShelves, book) {
+  for (var i = 0; i < bookShelves.length; i++) {
+    if (bookShelves[i] === book) {
       return true;
     } else {
       return false;
@@ -25,38 +25,57 @@ function shelfHasBook(shelf, book) {
 };
 
 function addBook(library, book) {
-  if (book.genre === "fantasy" && !shelfHasBook(library.shelves.fantasy, book)) {
+  if (book.genre === "fantasy" && !checkBookStatus(library.shelves.fantasy, book)) {
     library.shelves.fantasy.unshift(book);
-  } else if (book.genre === "fiction" && !shelfHasBook(library.shelves.fiction, book)) {
+  } else if (book.genre === "fiction" && !checkBookStatus(library.shelves.fiction, book)) {
     library.shelves.fiction.unshift(book);
-  } else if (book.genre === "nonFiction" && !shelfHasBook(library.shelves.nonFiction, book)) {
+  } else if (book.genre === "nonFiction" && !checkBookStatus(library.shelves.nonFiction, book)) {
     library.shelves.nonFiction.unshift(book);
   }
 };
 
+// FUNCTION 2 //
+
+function addBook(library, book) {
+  library.shelves[book.genre].push(book)
+};
+
+// FUNCTION 2 //
+
+function addBook(library, book) {
+  if (book.genre === "fantasy") {
+    library.shelves.fantasy.push(book);
+  } else if (book.genre === "nonFiction") {
+    library.shelves.nonFiction.push(book);
+  } else if (book.genre === "fiction") {
+    library.shelves.fiction.push(book);
+  }
+};
+
+
 //FUNCTION 3//
 
 function checkoutBook(library, bookTitle, bookGenre) {
-  var shelf = [];
+  var bookShelves = [];
   if (bookGenre === "fantasy") {
-    shelf = library.shelves.fantasy;
+    bookShelves = library.shelves.fantasy;
   } else if (bookGenre === "fiction") {
-    shelf = library.shelves.fiction;
+    bookShelves = library.shelves.fiction;
   } else if (bookGenre === "nonFiction") {
-    shelf = library.shelves.nonFiction;
+    bookShelves = library.shelves.nonFiction;
   }
-  var bookIndex = indexOfBook(shelf, bookTitle);
+  var bookIndex = findBookIndex(bookShelves, bookTitle);
   if (bookIndex >= 0) {
-    shelf.splice(bookIndex, 1);
+    bookShelves.splice(bookIndex, 1);
     return `You have now checked out ${bookTitle} from the ${library.name}`;
   } else {
     return `Sorry, there are currently no copies of ${bookTitle} available at the ${library.name}`;
   }
 };
 
-function indexOfBook(shelf, book) {
-  for (var i = 0; i < shelf.length; i++) {
-    if (shelf[i].title === book) {
+function findBookIndex(bookShelves, book) {
+  for (var i = 0; i < bookShelves.length; i++) {
+    if (bookShelves[i].title === book) {
       return i;
     } else {
       return -1;

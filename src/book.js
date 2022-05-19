@@ -17,19 +17,19 @@ function buildMainCharacter(name, age, pronouns) {
 
 //FUNCTION 3//
 
-function saveReview(review, reviewList) {
-  if (reviewList.indexOf(review) === -1) {
-    return reviewList.push(review);
+function saveReview(review, reviews) {
+  if (reviews.indexOf(review) === -1) {
+    return reviews.push(review);
   }
 };
 
 //FUNCTION 3//
 
-function saveReview(review, reviewList) {
-  if (reviewList.includes(review)) {
-    return reviewList;
+function saveReview(review, reviews) {
+  if (reviews.includes(review)) {
+    return reviews;
   } else {
-    return reviewList.push(review);
+    return reviews.push(review);
   }
 };
 
